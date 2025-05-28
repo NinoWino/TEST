@@ -1,24 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>SimpleApplication Web App</title>
-<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+<meta charset="utf-8">
+<title>{% block title %}{% endblock %}</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
 </head>
-<body>
-<header>
-<div class="container">
-<h1 class="logo">Simple Application Web App</h1>
-<strong><nav>
-<ul class="menu">
-<li><a href="{{ url_for('home') }}">Home</a></li>
-<li><a href="{{ url_for('about') }}">About</a></li>
-</ul>
-</nav></strong>
+<body class="loggedin">
+<nav class="navtop">
+<div>
+<h1>Website Title</h1>
+<a href="{{ url_for('home') }}"><i class="fas fa-home"></i>Home</a>
+<a href="{{ url_for('profile') }}"><i class="fas fa-user-circle"></i>Profile</a>
+<a href="{{ url_for('logout') }}"><i class="fas fa-sign-out-alt"></i>Logout</a>
 </div>
-</header>
-<div class="container">
-{% block content %}
-{% endblock %}
+</nav>
+<div class="content">
+{% block content %}{% endblock %}
 </div>
 </body>
 </html>

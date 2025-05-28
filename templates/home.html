@@ -1,7 +1,6 @@
-{% extends "layout.html" %}
+{% extends 'layout.html' %}
+{% block title %}Home{% endblock %}
 {% block content %}
-<div class="home">
-<h1>Home Page</h1>
-<p>The Main home page of the web app</p>
-</div>
+<h2>Home Page</h2>
+<p>Welcome back, {{ username }}!</p>
 {% endblock %}
